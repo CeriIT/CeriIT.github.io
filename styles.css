@@ -12,43 +12,58 @@ body {
 
 header {
     width: 100%;
-    display: inline-block;
+    display: flex;
+    justify-content: space-between;
 }
 
-header a {
+nav a {
 	display: inline-block;
 	font-size: 1rem;
-	margin: 0 10px;
-	padding: 1.6rem 0;
+	padding: 5px;
     color: #00ff2f;
 }
 
+nav a:visited {
+    color: green;
+}
+
+nav a:hover {
+    color: white;
+    font-weight: bolder;
+}
+
+nav a:active {
+    color:red;
+}
+
+
 nav {
-	float: right;
-	text-transform: lowercase;
+	margin: 20px;
+    text-transform: lowercase;
+    text-align: right;
 }
 
 #top {
-    display:flex;;
-    margin: 50px
+    display: flex;
+    margin: 50px;
 }
 
 #top-left {
     flex-basis: 30%;
     text-align: left;
-    padding: 30px;
+    padding: 20px;
 }
 
 #top-right {
     width: 65%;
     background-image: url("images/ceri2.jpg");
-    background-size: 50% 50% ;
+    /* background-size: 100% 100% ; */
     /* min-height: 300px; */
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
-    background-size:contain;
-    overflow: hidden;
+    background-size: contain;
+    /* overflow: hidden; */
 }
 
 /* #top-right img {
@@ -60,6 +75,15 @@ nav {
 h1 {
     display: inline-block;
     font-size: 2rem;
+    color:white;
+}
+
+a:visited {
+    text-decoration: none;
+}
+
+h3 {
+    margin-left: 10px;
 }
 
 h4 {
@@ -79,7 +103,7 @@ p {
 
 form {
     /* background-color: #fff; */
-    border-radius: 5px;
+    /* border-radius: 5px; */
     padding: 10px;
     padding-top: 20px;
     padding-bottom: 20px;
@@ -96,6 +120,7 @@ input, textarea {
     background-color: #f9fafa;
     width: 100%;
 }
+
 
 .form-item {
     padding: 10px;
@@ -115,18 +140,68 @@ button {
     border-radius: 2px;
 }
 
+#about {
+    padding: 30px;
+}
+
+#wip {
+    width: 90%;
+    display: block;
+    margin: auto;
+    margin-bottom: 20px;
+}
+
 footer {
     text-align: center;
     font-size: 1rem;
     background-color: #fff;
-    color:#000
+    color:#000;
+    margin: 5px;
 }
 
-@media (min-width: 600px) {
+footer img {
+    width: 20px;
+    height: 20px;
+    margin-top: 2px;
+}
+
+.wrong {
+    text-decoration: line-through;
+}
+
+.expanded-text {
+    width: 100%;
+}
+
+span.longer-name{
+    display:none;
+   }
+
+.expanded-text:hover span.short-name{
+    display:none;
+}
+
+.expanded-text:hover span.longer-name{
+    display:block;
+}
+
+
+@media (max-width: 600px) {
     .row .form-item{
         width: calc(100% / 2 - 25px);
         display: inline-block;
     }
+
+    #top {
+        flex-wrap: wrap;
+    }
+
+    #top-left {
+        flex-basis: 90%;
+        text-align: left;
+        padding: 5px;
+    }
+
 }
 
 
